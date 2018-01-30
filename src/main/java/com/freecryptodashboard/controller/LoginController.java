@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.freecryptodashboard.controller;
 
 import javax.validation.Valid;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.model.User;
-import com.example.service.UserService;
+import com.freecryptodashboard.model.User;
+import com.freecryptodashboard.service.UserService;
 
 @Controller
 public class LoginController {

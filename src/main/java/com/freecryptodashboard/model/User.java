@@ -1,4 +1,4 @@
-package com.example.model;
+package com.freecryptodashboard.model;
 
 import java.util.Set;
 

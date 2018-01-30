@@ -1,4 +1,4 @@
-package com.example.configuration;
+package com.freecryptodashboard.configuration;
 
 import javax.sql.DataSource;
 
