@@ -1,7 +1,5 @@
-# Spring Boot Hello World Example with JSP
+# Simple JSP ++ Controller that resolves up to 5 crypto currencies to calculate a total portfolio worth
 
-## Guide
-https://hellokoding.com/spring-boot-hello-world-example-with-jsp/
 
 ## What you'll need
 - JDK 1.7 or later
@@ -10,6 +8,4 @@ https://hellokoding.com/spring-boot-hello-world-example-with-jsp/
 ## Stack
 - Spring Boot
 - Java
-
-## Run
-`mvn spring-boot:run`
+- JSP
