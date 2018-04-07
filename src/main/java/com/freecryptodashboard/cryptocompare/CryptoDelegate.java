@@ -91,4 +91,13 @@ public class CryptoDelegate {
 		return null;
 	}
 
+	public static boolean cryptoHasValue(String cryptoValue, String symbol) {
+		
+		if(cryptoValue != null && !cryptoValue.trim().equalsIgnoreCase("") && symbol != null && !symbol.trim().equalsIgnoreCase("")) {
+			return true;
+		}else {
+			return false;
+		}		
+	}
+
 }

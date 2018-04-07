@@ -2335,7 +2335,6 @@ public class CryptoCurrencySymbolList {
 		cryptoList.add("YOC");
 		cryptoList.add("YOVI");
 		cryptoList.add("YOYOW");
-		cryptoList.add("Z2");
 		cryptoList.add("ZAB");
 		cryptoList.add("ZAP");
 		cryptoList.add("ZBC");

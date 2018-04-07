@@ -67,8 +67,11 @@
 	
 
 	<form:form method="post" action="cryptodashboard">
-		<div align="center" style="border: 1px solid black;width:50%;margin:auto">
+	
+	<div id="big-borda-yo" style="border: 1px solid black;width:75%;margin:auto">
+		<br>
 		
+		<div align="center" style="border: 1px solid black;width:50%;margin:auto" class="cryptoDiv">		
 			Select first currency: <select name="crypto1">
 				<option value="<c:out value="${crypto1}" />"><c:out value="${crypto1}" /></option>
 				<c:forEach items="${fullCryptoList}" var="item">
@@ -82,7 +85,7 @@
 		
 		<br><br>
 		
-		<div align="center" style="border: 1px solid black;width:50%;margin:auto">
+		<div align="center" style="border: 1px solid black;width:50%;margin:auto" class="cryptoDiv">
 		Select second currency:	<select name="crypto2">
 			<option value="<c:out value="${crypto2}" />"><c:out value="${crypto2}" /></option>
 				<c:forEach items="${fullCryptoList}" var="item">
@@ -96,7 +99,7 @@
 		
 		<br><br>
 		
-				<div align="center" style="border: 1px solid black;width:50%;margin:auto">
+				<div align="center" style="border: 1px solid black;width:50%;margin:auto" class="cryptoDiv">
 		Select Third currency:	<select name="crypto3">
 			<option value="<c:out value="${crypto3}" />"><c:out value="${crypto3}" /></option>
 				<c:forEach items="${fullCryptoList}" var="item">
@@ -109,7 +112,7 @@
 		</div>
 		<br><br>
 		
-						<div align="center" style="border: 1px solid black;width:50%;margin:auto">
+						<div align="center" style="border: 1px solid black;width:50%;margin:auto" class="cryptoDiv">
 		Select Fourth currency:	<select name="crypto4">
 			<option value="<c:out value="${crypto4}" />"><c:out value="${crypto4}" /></option>
 				<c:forEach items="${fullCryptoList}" var="item">
@@ -123,7 +126,7 @@
 		
 		<br><br>
 		
-								<div align="center" style="border: 1px solid black;width:50%;margin:auto">
+								<div align="center" style="border: 1px solid black;width:50%;margin:auto" class="cryptoDiv">
 		Select Fifth currency:	<select name="crypto5">
 			<option value="<c:out value="${crypto5}" />"><c:out value="${crypto4}" /></option>
 				<c:forEach items="${fullCryptoList}" var="item">
@@ -135,23 +138,23 @@
 				value=$<c:out value="${currency5total}"/> /> <label style="text-decoration:bold"> @ $${coin5Value}</label>
 		</div>
 		
-		
-		
-		</br></br></br>
-		
+	
 		
 		<div align="center">
 			</br> </br> <input type="submit" value="Calculate Total Portfolio Value" />
 		</div>
 
-		</br></br></br>		
+		</br>		
 		
 		
-		
-		<div align="center" style="border: 1px solid black;width:25%;margin:auto"><span style="text-decoration: underline">
+		<div align="center" style="border: 1px solid black;width:25%;margin:auto
+		;"><span style="text-decoration: underline">
 			Your total portfolio value:</span> <input type="text" name="totalValue"
 				readonly="readonly" disabled value=$<c:out value="${totalValue}"/> />
 		</div>
+		
+		</div>
+		<br>
 	</form:form>
 
 	<br><br><br>
