@@ -15,10 +15,12 @@
 </head>
 <body>
 
+	<div class="page-header">
+
 	<H1 align="center"
 		style="color: black; font-size: 46px; font-family: Comic Sans MS">Free
 		Crypto Dashboard</H1>
-
+	</div>
 
 </body>
 </html>

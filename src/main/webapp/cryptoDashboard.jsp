@@ -68,93 +68,124 @@
 
 	<form:form method="post" action="cryptodashboard">
 	
-	<div id="big-borda-yo" style="border: 1px solid black;width:75%;margin:auto">
+	<div class = "container" style="border:1px solid black">
+	
+		<div class="panel-group"> 
+		
+		
+		<div class = "panel-heading"> 
+		
+		<a data-toggle="collapse" href="collapse1">	<h4 class="panel-title"> Collapse List group</h4> </a>
+		
+		
+		</div>
+		
+	
 		<br>
 		
-		<div align="center" style="border: 1px solid black;width:50%;margin:auto" class="cryptoDiv">		
+		<div align="center" style="border: 1px solid black;margin:auto" class="well">		
 			Select first currency: <select name="crypto1">
 				<option value="<c:out value="${crypto1}" />"><c:out value="${crypto1}" /></option>
 				<c:forEach items="${fullCryptoList}" var="item">
 					<option value="<c:out value="${item}" />"><c:out value="${item}" /> </option>
 				</c:forEach>
 			</select>			
-			<br><br>Total holdings in USD: <input type="text" name="currency1Value" value=<c:out value="${currency1Value}" />>
+			<br><br>Total Holdings: <input type="text" name="currency1Value" value=<c:out value="${currency1Value}" />>
 			<input type="text" name="currency1total" readonly="readonly" disabled
-				value=$<c:out value="${currency1total}"/> /> <label style="text-decoration:bold"> @ $${coin1Value}</label>
+				value=$<c:out value="${currency1total}"/> /> <label style="text-decoration:bold"> <c:choose>
+	<c:when test="${empty coin1Value}"> </c:when>
+	<c:otherwise>@ $${coin1Value} </c:otherwise>
+</c:choose></label>
 		</div>
 		
 		<br><br>
 		
-		<div align="center" style="border: 1px solid black;width:50%;margin:auto" class="cryptoDiv">
+		<div align="center" style="border: 1px solid black;margin:auto" class="well">
 		Select second currency:	<select name="crypto2">
 			<option value="<c:out value="${crypto2}" />"><c:out value="${crypto2}" /></option>
 				<c:forEach items="${fullCryptoList}" var="item">
 					<option value="<c:out value="${item}" />"><c:out value="${item}" /> </option>
 				</c:forEach>		
 		</select>
-			<br><br>Total Holdings in USD:<input type="text" name="currency2Value" value=<c:out value="${currency2Value}" /> > <input
+			<br><br>Total Holdings: <input type="text" name="currency2Value" value=<c:out value="${currency2Value}" /> > <input
 				type="text" name="currency2total" readonly="readonly" disabled
-				value=$<c:out value="${currency2total}"/> /> <label style="text-decoration:bold"> @ $${coin2Value}</label>
+				value=$<c:out value="${currency2total}"/> /> <label style="text-decoration:bold"> <c:choose>
+	<c:when test="${empty coin2Value}"> </c:when>
+	<c:otherwise>@ $${coin2Value} </c:otherwise>
+</c:choose></label>
 		</div>
 		
 		<br><br>
 		
-				<div align="center" style="border: 1px solid black;width:50%;margin:auto" class="cryptoDiv">
+				<div align="center" style="border: 1px solid black;margin:auto" class="well">
 		Select Third currency:	<select name="crypto3">
 			<option value="<c:out value="${crypto3}" />"><c:out value="${crypto3}" /></option>
 				<c:forEach items="${fullCryptoList}" var="item">
 					<option value="<c:out value="${item}" />"><c:out value="${item}" /> </option>
 				</c:forEach>		
 		</select>
-			<br><br>Total Holdings in USD:<input type="text" name="currency3Value" value=<c:out value="${currency3Value}" /> > <input
+			<br><br>Total Holdings: <input type="text" name="currency3Value" value=<c:out value="${currency3Value}" /> > <input
 				type="text" name="currency3total" readonly="readonly" disabled
-				value=$<c:out value="${currency3total}"/> /> <label style="text-decoration:bold"> @ $${coin3Value}</label>
+				value=$<c:out value="${currency3total}"/> /> <label style="text-decoration:bold"><c:choose>
+	<c:when test="${empty coin3Value}"> </c:when>
+	<c:otherwise>@ $${coin3Value} </c:otherwise>
+</c:choose></label>
 		</div>
 		<br><br>
 		
-						<div align="center" style="border: 1px solid black;width:50%;margin:auto" class="cryptoDiv">
+						<div align="center" style="border: 1px solid black;margin:auto" class="well">
 		Select Fourth currency:	<select name="crypto4">
 			<option value="<c:out value="${crypto4}" />"><c:out value="${crypto4}" /></option>
 				<c:forEach items="${fullCryptoList}" var="item">
 					<option value="<c:out value="${item}" />"><c:out value="${item}" /> </option>
 				</c:forEach>		
 		</select>
-			<br><br>Total Holdings in USD:<input type="text" name="currency4Value" value=<c:out value="${currency4Value}" /> > <input
+			<br><br>Total Holdings: <input type="text" name="currency4Value" value=<c:out value="${currency4Value}" /> > <input
 				type="text" name="currency4total" readonly="readonly" disabled
-				value=$<c:out value="${currency4total}"/> /> <label style="text-decoration:bold"> @ $${coin4Value}</label>
+				value=$<c:out value="${currency4total}"/> /> <label style="text-decoration:bold"> <c:choose>
+	<c:when test="${empty coin4Value}"> </c:when>
+	<c:otherwise>@ $${coin4Value} </c:otherwise>
+</c:choose></label>
 		</div>
 		
 		<br><br>
 		
-								<div align="center" style="border: 1px solid black;width:50%;margin:auto" class="cryptoDiv">
+								<div align="center" style="border: 1px solid black;margin:auto" class="well">
 		Select Fifth currency:	<select name="crypto5">
-			<option value="<c:out value="${crypto5}" />"><c:out value="${crypto4}" /></option>
+			<option value="<c:out value="${crypto5}" />"><c:out value="${crypto5}" /></option>
 				<c:forEach items="${fullCryptoList}" var="item">
 					<option value="<c:out value="${item}" />"><c:out value="${item}" /> </option>
 				</c:forEach>		
 		</select>
-			<br><br>Total Holdings in USD:<input type="text" name="currency5Value" value=<c:out value="${currency5Value}" /> > <input
+			<br><br>Total Holdings: <input type="text" name="currency5Value" value=<c:out value="${currency5Value}" /> > <input
 				type="text" name="currency5total" readonly="readonly" disabled
-				value=$<c:out value="${currency5total}"/> /> <label style="text-decoration:bold"> @ $${coin5Value}</label>
+				value=$<c:out value="${currency5total}"/> /> <label style="text-decoration:bold"> <c:choose>
+	<c:when test="${empty coin5Value}"> </c:when>
+	<c:otherwise>@ $${coin5Value} </c:otherwise>
+</c:choose></label>
 		</div>
 		
 	
 		
 		<div align="center">
-			</br> </br> <input type="submit" value="Calculate Total Portfolio Value" />
+			</br> </br> <input type="submit" value="Calculate Total Portfolio Value" class="btn btn-primary"/>
 		</div>
 
-		</br>		
+		<br>		
 		
 		
-		<div align="center" style="border: 1px solid black;width:25%;margin:auto
-		;"><span style="text-decoration: underline">
+		<div align="center" style="border: 1px solid black;margin:auto" class="well">
 			Your total portfolio value:</span> <input type="text" name="totalValue"
 				readonly="readonly" disabled value=$<c:out value="${totalValue}"/> />
 		</div>
 		
-		</div>
 		<br>
+		
+		</div>
+		
+		
+		</div>
+		
 	</form:form>
 
 	<br><br><br>
