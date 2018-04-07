@@ -10,11 +10,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Free Crypto Dashboard</title>
 </head>
-<body>
-
 
 	<%@include file="Header.jsp"%>
-<hr>
+<hr style="heigh:1px; color:#333;background-color: #333;">
+
+	<br>
+	<br>
 
 	<script type="text/javascript">
     localStorage.setItem('crypto1','${crypto1}'); //Where param user is your request parameter from previous jsp.
@@ -42,26 +43,6 @@
 	</h3>
 	 <br>
 
-<!--  	<form:form method="post" action = "cryptoselection">
-		<div align = "center" >
-			 <h3> How many different coins are in your portfolio?:</h3>
-			Number coins: <select name="numberCoins">
-				<option value ="1">1</option>
-				<option value ="2">2</option>
-				<option value ="3">3</option>
-				<option value ="4">4</option>
-				<option value ="5">5</option>
-				<option value ="6">6</option>
-				<option value ="7">7</option>
-				<option value ="8">8</option>
-				<option value ="9">9</option>
-				<option value ="10">10</option>
-			</select>
-		
-		</div>
-		
-	</form:form> -->
-	
 	<br>
 	<br>
 	

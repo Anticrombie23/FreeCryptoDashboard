@@ -15,7 +15,7 @@
 		<span style = "color:red">0x4689831Fa4098B7e66c4C8cF458226edf8EDe3d4</span></p>
 	<p>Or consider donating ADA (Cardano, my personal favorite project) here: <span style="color:red">DdzFFzCqrhsm6PBFtL62o26uzAjPZYVmMGqABTU842LqRy5nkqUtCavDAAH3cgXaqdKEA9uMEDQ9h2sYxh6EEtZBEnyXxuxJXfNEuikx</span></p>
 		
-		<p>Currently, we use cryptocompare's API to read the current value of each requested symbol. We use local storage to maintain the wallet values. We do not store your wallet data anywhere on our website. </p>
+		<p>Currently, we use cryptocompare's API to read the current value of each requested symbol. We do not store any of your wallet data anywhere on the website. </p>
 	<hr>
 </div>
 </body>

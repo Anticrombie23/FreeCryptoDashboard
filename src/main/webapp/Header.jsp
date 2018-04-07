@@ -13,12 +13,12 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
-<body>
+<body background="grey">
 
 	<div class="page-header">
 
 	<H1 align="center"
-		style="color: black; font-size: 46px; font-family: Comic Sans MS">Free
+		style="color: black; font-size: 46px; font-family: Georgia">Free
 		Crypto Dashboard</H1>
 	</div>
 
