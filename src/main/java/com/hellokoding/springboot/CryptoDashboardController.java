@@ -34,10 +34,11 @@ public class CryptoDashboardController {
 			@RequestParam("currency2Value") String currency2Value, @RequestParam("crypto3") String currency3,
 			@RequestParam("currency3Value") String currency3Value, @RequestParam("crypto4") String currency4,
 			@RequestParam("currency4Value") String currency4Value, @RequestParam("crypto5") String currency5,
-			@RequestParam("currency5Value") String currency5Value) throws JsonProcessingException, IOException {
+			@RequestParam("currency5Value") String currency5Value, @RequestParam("crypto6") String currency6,
+			@RequestParam("currency6Value") String currency6Value) throws JsonProcessingException, IOException {
 
 		Map<String, String> cryptoValues = saveSelectedCryptoValues(currency1, currency2, currency1Value,
-				currency2Value, currency3, currency3Value, currency4, currency4Value, currency5, currency5Value);
+				currency2Value, currency3, currency3Value, currency4, currency4Value, currency5, currency5Value, currency6, currency6Value);
 
 		List<String> cryptosToTotal = new ArrayList<String>();
 
@@ -80,13 +81,20 @@ public class CryptoDashboardController {
 			model.addAttribute("currency5total", currency5total);
 			model.addAttribute("coin5Value", cryptoValues.get(currency5));
 		}
+		
+		if(CryptoDelegate.cryptoHasValue(currency6, currency6Value)) {
+			String currency6total = delegate.calculateHoldingValue(cryptoValues, Double.parseDouble(currency6Value), currency6);
+			cryptosToTotal.add(currency6total);
+			model.addAttribute("currency6total", currency6total);
+			model.addAttribute("coin6Value", cryptoValues.get(currency6));
+		}
 
 		// Calculate total given crypto value
 		String cryptoPortfolioTotal = delegate.calculateCryptoTotalWorth(cryptosToTotal);
 		model.addAttribute("totalValue", cryptoPortfolioTotal);
 
 		maintainSelectedValuesInModel(model, currency1, currency2, currency1Value, currency2Value, currency3,
-				currency3Value, currency4, currency4Value, currency5, currency5Value);
+				currency3Value, currency4, currency4Value, currency5, currency5Value, currency6, currency6Value);
 
 		maintainStaticCryptoValues(model);
 
@@ -95,35 +103,38 @@ public class CryptoDashboardController {
 
 	private Map<String, String> saveSelectedCryptoValues(String currency1, String currency2, String currency1Value,
 			String currency2Value, String currency3, String currency3Value, String currency4, String currency4Value,
-			String currency5, String currency5Value) throws JsonProcessingException, IOException {
+			String currency5, String currency5Value, String currency6, String currency6Value) throws JsonProcessingException, IOException {
 		List<String> currencyList = new ArrayList<String>();
 		addSingleValidCrypto(currency1, currency1Value, currencyList);
 		addSingleValidCrypto(currency2, currency2Value, currencyList);
 		addSingleValidCrypto(currency3, currency3Value, currencyList);
 		addSingleValidCrypto(currency4, currency4Value, currencyList);
 		addSingleValidCrypto(currency5, currency5Value, currencyList);
+		addSingleValidCrypto(currency6, currency6Value, currencyList);
 		Map<String, String> cryptoValues = delegate.getSelectedCryptoValues(currencyList);
 		return cryptoValues;
 	}
 
 	private void maintainSelectedValuesInModel(Model model, String currency1, String currency2, String currency1Value,
 			String currency2Value, String currency3, String currency3Value, String currency4, String currency4Value,
-			String currency5, String currency5Value) {
+			String currency5, String currency5Value, String currency6, String currency6Value) {
 		model.addAttribute("currency1Value", currency1Value);
 		model.addAttribute("currency2Value", currency2Value);
 		model.addAttribute("currency3Value", currency3Value);
 		model.addAttribute("currency4Value", currency4Value);
 		model.addAttribute("currency5Value", currency5Value);
+		model.addAttribute("currency6Value", currency6Value);
 		model.addAttribute("crypto1", currency1);
 		model.addAttribute("crypto2", currency2);
 		model.addAttribute("crypto3", currency3);
 		model.addAttribute("crypto4", currency4);
 		model.addAttribute("crypto5", currency5);
+		model.addAttribute("crypto6", currency6);
 	}
 
-	private void addSingleValidCrypto(String currency1, String currency1Value, List<String> currencyList) {
-		if (CryptoDelegate.cryptoHasValue(currency1, currency1Value)) {
-			currencyList.add(currency1);
+	private void addSingleValidCrypto(String currency, String currencyValue, List<String> currencyList) {
+		if (CryptoDelegate.cryptoHasValue(currency, currencyValue)) {
+			currencyList.add(currency);
 		}
 	}
 

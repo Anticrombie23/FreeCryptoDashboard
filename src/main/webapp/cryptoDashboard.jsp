@@ -68,21 +68,13 @@
 
 	<form:form method="post" action="cryptodashboard">
 	
-	<div class = "container" style="border:1px solid black">
+	<div class = "container" style="border:1px solid black" align="center">
 	
 		<div class="panel-group"> 
-		
-		
-		<div class = "panel-heading"> 
-		
-		<a data-toggle="collapse" href="collapse1">	<h4 class="panel-title"> Collapse List group</h4> </a>
-		
-		
-		</div>
-		
 	
 		<br>
 		
+				
 		<div align="center" style="border: 1px solid black;margin:auto" class="well">		
 			Select first currency: <select name="crypto1">
 				<option value="<c:out value="${crypto1}" />"><c:out value="${crypto1}" /></option>
@@ -100,6 +92,13 @@
 		
 		<br><br>
 		
+
+		
+		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#crypto2collapse" >Add Second Crypto</button>
+		
+
+		<div id="crypto2collapse" class="${empty coin2Value ? 'collapse' : 'collapse in' }" > 
+		
 		<div align="center" style="border: 1px solid black;margin:auto" class="well">
 		Select second currency:	<select name="crypto2">
 			<option value="<c:out value="${crypto2}" />"><c:out value="${crypto2}" /></option>
@@ -115,8 +114,13 @@
 </c:choose></label>
 		</div>
 		
+		</div>
+		
 		<br><br>
 		
+		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#crypto3collapse" >Add Third Crypto</button>
+		
+		<div id="crypto3collapse" class="${empty coin3Value ? 'collapse' : 'collapse in' }"> 
 				<div align="center" style="border: 1px solid black;margin:auto" class="well">
 		Select Third currency:	<select name="crypto3">
 			<option value="<c:out value="${crypto3}" />"><c:out value="${crypto3}" /></option>
@@ -131,8 +135,13 @@
 	<c:otherwise>@ $${coin3Value} </c:otherwise>
 </c:choose></label>
 		</div>
+		
+		</div>
 		<br><br>
 		
+		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#crypto4collapse" >Add Fourth Crypto</button>
+		
+		<div id="crypto4collapse" class="${empty coin4Value ? 'collapse' : 'collapse in' }"> 
 						<div align="center" style="border: 1px solid black;margin:auto" class="well">
 		Select Fourth currency:	<select name="crypto4">
 			<option value="<c:out value="${crypto4}" />"><c:out value="${crypto4}" /></option>
@@ -148,8 +157,12 @@
 </c:choose></label>
 		</div>
 		
+		</div>
 		<br><br>
 		
+		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#crypto5collapse" >Add Fifth Crypto</button>
+		
+		<div id="crypto5collapse" class="${empty coin2Value ? 'collapse' : 'collapse in' }"> 
 								<div align="center" style="border: 1px solid black;margin:auto" class="well">
 		Select Fifth currency:	<select name="crypto5">
 			<option value="<c:out value="${crypto5}" />"><c:out value="${crypto5}" /></option>
@@ -164,7 +177,30 @@
 	<c:otherwise>@ $${coin5Value} </c:otherwise>
 </c:choose></label>
 		</div>
+		 </div>
+		 
+		 <br><br>
+		 
+		 		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#crypto6collapse" >Add Sixth Crypto</button>
 		
+		<div id="crypto6collapse" class="${empty coin6Value ? 'collapse' : 'collapse in' }"> 
+								<div align="center" style="border: 1px solid black;margin:auto" class="well">
+		Select Sixth currency:	<select name="crypto6">
+			<option value="<c:out value="${crypto6}" />"><c:out value="${crypto6}" /></option>
+				<c:forEach items="${fullCryptoList}" var="item">
+					<option value="<c:out value="${item}" />"><c:out value="${item}" /> </option>
+				</c:forEach>		
+		</select>
+			<br><br>Total Holdings: <input type="text" name="currency6Value" value=<c:out value="${currency6Value}" /> > <input
+				type="text" name="currency6total" readonly="readonly" disabled
+				value=$<c:out value="${currency6total}"/> /> <label style="text-decoration:bold"> <c:choose>
+	<c:when test="${empty coin6Value}"> </c:when>
+	<c:otherwise>@ $${coin6Value} </c:otherwise>
+</c:choose></label>
+		</div>
+		 </div>
+		 
+		 
 	
 		
 		<div align="center">

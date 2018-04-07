@@ -7,7 +7,7 @@
 <title>Free Crypto Dashboard</title>
 </head>
 <body>
-<div align = "center" class="collapse">
+<div align = "center" >
 	<hr>
 	<p margin-top: 50px>Copyright Josh Harm 2018. Please e-mail all suggestions/questions to jharm26@gmail.com</p> 
 	<p> If you appreciate this website,
