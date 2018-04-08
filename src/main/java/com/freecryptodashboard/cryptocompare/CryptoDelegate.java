@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -91,9 +93,10 @@ public class CryptoDelegate {
 		return null;
 	}
 
-	public static boolean cryptoHasValue(String cryptoValue, String symbol) {
+	public static boolean cryptoHasValue(String symbol, String cryptoValue) {
 		
-		if(cryptoValue != null && !cryptoValue.trim().equalsIgnoreCase("") && symbol != null && !symbol.trim().equalsIgnoreCase("")) {
+				
+		if(cryptoValue != null && !cryptoValue.trim().equalsIgnoreCase("") && symbol != null && !symbol.trim().equalsIgnoreCase("") && NumberUtils.isNumber(cryptoValue)) {
 			return true;
 		}else {
 			return false;
