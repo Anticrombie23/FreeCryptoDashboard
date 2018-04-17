@@ -95,12 +95,18 @@ public class CryptoDelegate {
 
 	public static boolean cryptoHasValue(String symbol, String cryptoValue) {
 		
-				
-		if(cryptoValue != null && !cryptoValue.trim().equalsIgnoreCase("") && symbol != null && !symbol.trim().equalsIgnoreCase("") && NumberUtils.isNumber(cryptoValue)) {
+		if(StringUtils.isNumeric(cryptoValue)) {
 			return true;
 		}else {
 			return false;
-		}		
+		}
+		
+				
+//		if(cryptoValue != null && !cryptoValue.trim().equalsIgnoreCase("") && symbol != null && !symbol.trim().equalsIgnoreCase("") && NumberUtils.isNumber(cryptoValue)) {
+//			return true;
+//		}else {
+//			return false;
+//		}		
 	}
 
 }
